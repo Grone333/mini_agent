@@ -1,10 +1,15 @@
 import re
+import ast  
 from tools.calculator import calculator
 from tools.file_reader import file_reader
 from tools.web_search import web_search
 from tools.database_query import database_query
 import os
 import requests
+from dotenv import load_dotenv
+import sys
+sys.stdout.reconfigure(encoding="utf-8")
+load_dotenv()
 
 #1.工具注册表
 TOOLS={
@@ -16,12 +21,18 @@ TOOLS={
 
 #2.系统提示词：规定输出格式
 SYSTEM_PROMPT = """你是一个能调用工具回答问题的智能体。
+规则：
+1. 涉及计算的问题，必须调用 calculator 工具，禁止直接心算。
+2. 每次只能输出一个 Action,参数要加引号,例如:Action: calculator("2+3*4")
+3. 输出 Action 后必须等待 Observation,同一个回答里不能给出 Final Answer。
+4. 看到 Observation 后，再输出：
+Final Answer: 答案
 需要工具时，必须严格按照以下格式输出：
-Thought：你的思考
-Action：工具名
+Thought: 你的思考
+Action: 工具名(参数)
 
 知道答案时输出：
-Final Answer：答案
+Final Answer: 答案
 """
 
 #3.模型接口
@@ -32,7 +43,7 @@ def ask_llm(message:list)->str:
         return "请在环境变量中设置 DEEPSEEK_API_KEY"
 
     resp= requests.post(
-        "https://api.deepseek.ai/v1",
+        "https://api.deepseek.com/chat/completions",
         headers={"Authorization":f"Bearer {api_key}"},
         json={
             "model": DEEPSEEK_MODEL,
@@ -46,14 +57,23 @@ def ask_llm(message:list)->str:
     return resp.json()["choices"][0]["message"]["content"]
 
 #4.解析并执行Action行
-def run_tool(action:str)->str:
-    match=re.match(r"(\w+)\((.*)\)",action.strip)
+def run_tool(action: str) -> str:
+    match = re.match(r"(\w+)\((.*)\)", action.strip())
     if not match:
         return f"Action 格式错误: {action}"
-    name, args = match.group(1), match.group(2)
+    name, args_str = match.group(1), match.group(2)
     if name not in TOOLS:
         return f"未知工具: {name}"
-    return str(TOOLS[name](args))
+    try:
+
+        parsed = ast.literal_eval(args_str)
+    except (ValueError, SyntaxError):
+        return f"参数解析失败: {args_str}"
+
+    if isinstance(parsed, tuple):
+        return str(TOOLS[name](*parsed))
+    return str(TOOLS[name](parsed))
+
 
 #5.ReAct循环
 def react(question:str,max_steps:int=5)->str:
@@ -68,7 +88,8 @@ def react(question:str,max_steps:int=5)->str:
         if "Final Answer" in text:
             return text
         if "Action:" in text:
-            action=text.split("Action:")[1].strip("\n")[0]
+
+            action = text.split("Action:")[1].split("\n")[0]
             obs=run_tool(action)
             messages.append({"role":"assistant","content":text})
             messages.append({"role":"user","content":f"Observation: {obs}"})
@@ -78,4 +99,4 @@ def react(question:str,max_steps:int=5)->str:
 if __name__=="__main__":
     question="2+3*4=?"
     answer=react(question)
-    print(f"最终答案: {answer}")
+    print(f"问题: {question}\n答案: {answer}")
