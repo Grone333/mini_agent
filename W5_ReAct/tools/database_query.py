@@ -1,5 +1,3 @@
-# 新增：import 统一放文件顶部（原来 sqlite3 写在函数内部，且缺少 typing 导入，
-# 导致模块一加载就报 NameError: name 'Optional' is not defined）
 import sqlite3
 from typing import Optional, List, Tuple
 

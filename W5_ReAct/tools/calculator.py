@@ -14,5 +14,4 @@ def calculator(s):
     except ZeroDivisionError:
         return "除数不能为零"
     except (SyntaxError, TypeError):
-        # 新增：空字符串、表达式不完整等会抛 SyntaxError，一并接住
         return "表达式无法解析"
