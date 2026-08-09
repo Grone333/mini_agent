@@ -17,7 +17,6 @@ def web_search(query: str, max_results: int = 5, timeout: int = 10) -> Union[Lis
         response.raise_for_status()
         response.encoding = response.apparent_encoding
         soup = BeautifulSoup(response.text, "html.parser")
-        # 提示：Baidu 可能改版或返回验证页，若结果为空，先打印 response.text 观察返回内容
         items = soup.select("div.result.c-container")
 
         for item in items[:max_results]:
