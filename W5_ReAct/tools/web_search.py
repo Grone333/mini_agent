@@ -1,22 +1,24 @@
 import requests
 from bs4 import BeautifulSoup
-from typing import List, Dict
+from typing import List, Dict, Union
 
 
-def web_search(query:str,max_results:int=5,timeout:int=10)->List[Dict]:
+def web_search(query: str, max_results: int = 5, timeout: int = 10) -> Union[List[Dict], str]:
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
     }
-    url="https://www,baidu.com/s"
-    params={"wd":query}
 
-    results =[]
+    url = "https://www.baidu.com/s"
+    params = {"wd": query}
+
+    results = []
     try:
         response = requests.get(url, headers=headers, params=params, timeout=timeout)
         response.raise_for_status()
         response.encoding = response.apparent_encoding
         soup = BeautifulSoup(response.text, "html.parser")
-        items =soup.select("div.result.c-container")
+        # 提示：Baidu 可能改版或返回验证页，若结果为空，先打印 response.text 观察返回内容
+        items = soup.select("div.result.c-container")
 
         for item in items[:max_results]:
             title_tag = item.select_one("h3 a")
@@ -29,6 +31,7 @@ def web_search(query:str,max_results:int=5,timeout:int=10)->List[Dict]:
             results.append({"title": title, "link": link, "summary": summary})
 
     except requests.exceptions.RequestException as e:
-            print(f"网络请求异常: {e}")
+
+        return f"网络请求异常: {e}"
     return results
           
