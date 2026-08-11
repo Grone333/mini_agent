@@ -23,24 +23,29 @@ def load_and_split_pdfs(pdf_paths: list[str]):
         print(f"📄 加载 PDF: {pdf_path}")
 
         # 填空1：创建 PDF 加载器（此刻还没真正读文件）
-        # 提示：PyPDFLoader(pdf_path)
-        loader = ____________
+        loader = PyPDFLoader(pdf_path)
 
         # 填空2：真正读取 PDF，返回一页一个 Document
-        # 提示：loader.load()
-        docs = ____________
+        docs = loader.load()
         print(f"   共 {len(docs)} 页")
-        documents.extend(docs)           # 把这一份的页面并进总列表
+        documents.extend(docs)  
+        """
+        用extend并入来实现读取多个pdf
+        """
     print(f"   合计 {len(documents)} 页")
 
     # 填空3：创建分割器，参数含义：
     #   chunk_size=400   每块目标约 400 字符
     #   chunk_overlap=80 相邻块重叠 80 字符，防止跨块信息被切断
     #   separators=["\n\n", "\n", "。", "；", "，", " ", ""] 段落→行→句→词→字符
-    splitter = ____________
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=400,
+        chunk_overlap= 80,
+        separators=["\n\n", "\n", "。", "；", "，", " ", ""]
+    )
 
     # 填空4：对全部页面统一切分成文本块
     # 提示：splitter.split_documents(documents)
-    chunks = ____________
+    chunks = splitter.split_documents(documents)
     print(f"   分割成 {len(chunks)} 个文本块")
     return chunks
