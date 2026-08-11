@@ -5,3 +5,7 @@ __pycache__/
 venv/
 .env
 .DS_Store
+
+# W7 向量库数据（运行后体积可达几十 MB，只保留目录占位）
+W7_RAG/chroma_db/*
+!W7_RAG/chroma_db/.gitkeep
