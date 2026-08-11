@@ -26,15 +26,15 @@ class LongTermMemory:
         )#向量化写入集合
         self.next_id += 1  
 
-    def search(self,query:str,top_k:int=3):
+    def search(self,query:str,k:int=3):
         """
         检索长期记忆
         :param query: 查询内容
-        :param top_k: 返回最相似的前K条消息
+        :param k: 返回最相似的前K条消息
         :return: 最相似的消息列表
         """
         results = self.collection.query(
             query_texts=[query],
-            n_results=top_k
+            n_results=k
         )#向量化查询集合
         return results['documents'][0]  # 返回最相似的消息列表

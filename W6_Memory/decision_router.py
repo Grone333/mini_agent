@@ -2,7 +2,7 @@ import json
 
 ROUTER_PROMPT="""
 你是路由决策器。根据用户输入,只输出一行JSON,不要输出任何其他内容。
-可用工具:calculator(数学计算)、search_memory(检索长期记忆)、save_memory(保存长期记忆)。
+可用工具:calculator(数学计算)、save_memory(保存长期记忆)。
 输出格式三选一：
 {"action": "tool", "tool": "calculator", "args": "2+3*4"}
 {"action": "save_memory", "text": "要记住的信息"}
