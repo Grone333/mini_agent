@@ -23,19 +23,19 @@ def create_vectorstore(chunks, persist_dir):
     """
     # 填空1：创建嵌入模型实例（加载和写入都需要）
     # 提示：SiliconFlowEmbeddings()
-    embeddings = ____________
+    embeddings = SiliconFlowEmbeddings()
 
     # 判断向量库是否已存在：目录里出现 chroma.sqlite3 就说明建过库
     # 填空2：拼出 chroma.sqlite3 的完整路径
     # 提示：os.path.join(persist_dir, "chroma.sqlite3")
-    chroma_db_file = ____________
+    chroma_db_file = os.path.join(persist_dir,"chroma.sqlite3")
 
     if os.path.exists(chroma_db_file):
         print(f"♻️  检测到已有向量库 {persist_dir}，直接复用（跳过向量化）")
         try:
             # 填空3：从磁盘加载已有向量库（不重新 embedding）
             # 提示：Chroma(persist_directory=persist_dir, embedding_function=embeddings)
-            return ____________
+            return Chroma(persist_directory=persist_dir,embedding_function=embeddings)
         except Exception as e:
             # 万一库损坏加载失败，就降级为重新构建
             print(f"⚠️  已有向量库加载失败（{e}），重新构建")
@@ -43,7 +43,7 @@ def create_vectorstore(chunks, persist_dir):
     print("🧠 正在向量化文本块...")
     # 填空4：向量化 + 入库一步完成
     # 提示：Chroma.from_documents(documents=chunks, embedding=embeddings, persist_directory=persist_dir)
-    vectorstore = ____________
+    vectorstore = Chroma.from_documents(documents=chunks,embedding=embeddings,persist_directory=persist_dir)
     print(f"   已存入 {persist_dir}")
     return vectorstore                          # 返回向量库对象（自带检索能力）
 
@@ -57,12 +57,13 @@ def rebuild_vectorstore(persist_dir):
     #   1) 目标确实是目录（os.path.isdir(abs_dir)）
     #   2) 它的父目录就是项目目录（os.path.dirname(abs_dir) == project_dir）
     #   3) 目录名是 "chroma_db"（os.path.basename(abs_dir) == "chroma_db"）
-    is_safe = ____________
-
+    is_safe = (os.path.isdir(abs_dir) and os.path.dirname(abs_dir)==project_dir
+               and os.path.basename(abs_dir)=="chroma_db")
+    
     if is_safe:
         print(f"🗑️  删除旧向量库 {abs_dir}（--rebuild）")
         # 填空6：递归删除该目录
         # 提示：shutil.rmtree(abs_dir)
-        ____________
+        shutil.rmtree(abs_dir)
     else:
         print(f"⚠️  跳过删除：{abs_dir} 不是项目内的 chroma_db 目录")
