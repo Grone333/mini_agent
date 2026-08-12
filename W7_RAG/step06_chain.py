@@ -64,8 +64,8 @@ def create_qa_chain(vectorstore):
     #          chain_type_kwargs={"prompt": prompt}, return_source_documents=True)
     qa = RetrievalQA.from_chain_type(
         llm=llm, chain_type="stuff", retriever=retriever,
-    #          chain_type_kwargs={"prompt": prompt}, return_source_documents=True
-    )
+        chain_type_kwargs={"prompt": prompt}, return_source_documents=True
+        )
     return qa
 
 
@@ -86,4 +86,5 @@ def ask(qa, question: str):
         if key not in seen:
             # 填空9：打印来源（带页码，页码从 0 开始所以 +1），并记录到 seen 去重
             # 提示：print(f"   - {os.path.basename(source)} 第 {page+1} 页") + seen.add(key)
-            print(f"   - {os.path.basename(source)} 第 {page+1} 页") + seen.add(key)
+            print(f"   - {os.path.basename(source)} 第 {page+1} 页") 
+            seen.add(key)
