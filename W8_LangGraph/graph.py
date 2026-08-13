@@ -15,6 +15,7 @@ from langgraph.graph import StateGraph, START, END
 
 from state import RAGState          # 状态类型
 from nodes import retrieve_node, generate_node   # 两个工作流节点
+from langgraph.checkpoint.memory import MemorySaver # 进阶：加上 checkpoint 实现多轮记忆
 
 # 填空1：创建状态图
 # 提示：StateGraph(RAGState)
@@ -40,7 +41,6 @@ graph.add_edge("generate",END)
 
 # 填空6：编译成可调用对象
 # 提示：graph.compile()
-# 进阶：加上 checkpoint 实现多轮记忆——
-#   from langgraph.checkpoint.memory import MemorySaver
-#   app = graph.compile(checkpointer=MemorySaver())
-app = graph.compile()
+
+app = graph.compile(checkpointer=MemorySaver())
+
