@@ -1,0 +1,5 @@
+langgraph>=0.2.0
+gradio>=4.0.0
+# 以下依赖 W7 已装好，直接复用：
+# langchain, langchain-community, langchain-core, chromadb, openai,
+# python-dotenv, requests, pypdf

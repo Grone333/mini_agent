@@ -1,0 +1,134 @@
+Collecting langgraph
+  Using cached langgraph-0.6.11-py3-none-any.whl (155 kB)
+Collecting gradio
+  Using cached gradio-4.44.1-py3-none-any.whl (18.1 MB)
+Collecting xxhash>=3.5.0
+  Using cached xxhash-4.0.0-cp39-cp39-win_amd64.whl (36 kB)
+Collecting langgraph-sdk<0.3.0,>=0.2.2
+  Using cached langgraph_sdk-0.2.9-py3-none-any.whl (56 kB)
+Requirement already satisfied: langchain-core>=0.1 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from langgraph) (0.3.86)
+Collecting langgraph-checkpoint<4.0.0,>=2.1.0
+  Using cached langgraph_checkpoint-2.1.2-py3-none-any.whl (45 kB)
+Collecting langgraph-prebuilt<0.7.0,>=0.6.0
+  Using cached langgraph_prebuilt-0.6.5-py3-none-any.whl (28 kB)
+Requirement already satisfied: pydantic>=2.7.4 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from langgraph) (2.13.4)
+Collecting fastapi<1.0
+  Downloading fastapi-0.128.8-py3-none-any.whl (103 kB)
+     ------------------------------------ 103.6/103.6 KB 352.4 kB/s eta 0:00:00
+Requirement already satisfied: anyio<5.0,>=3.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from gradio) (4.12.1)
+Collecting pillow<11.0,>=8.0
+  Downloading pillow-10.4.0-cp39-cp39-win_amd64.whl (2.6 MB)
+     ---------------------------------------- 2.6/2.6 MB 4.2 MB/s eta 0:00:00
+Collecting python-multipart>=0.0.9
+  Downloading python_multipart-0.0.20-py3-none-any.whl (24 kB)
+Requirement already satisfied: jinja2<4.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from gradio) (3.1.6)
+Requirement already satisfied: uvicorn>=0.14.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from gradio) (0.39.0)
+Collecting aiofiles<24.0,>=22.0
+  Downloading aiofiles-23.2.1-py3-none-any.whl (15 kB)
+Requirement already satisfied: packaging in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from gradio) (25.0)
+Collecting ruff>=0.2.2
+  Downloading ruff-0.16.2-py3-none-win_amd64.whl (12.0 MB)
+     --------------------------------------- 12.0/12.0 MB 14.9 MB/s eta 0:00:00
+Requirement already satisfied: httpx>=0.24.1 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from gradio) (0.28.1)
+Collecting tomlkit==0.12.0
+  Downloading tomlkit-0.12.0-py3-none-any.whl (37 kB)
+Collecting pandas<3.0,>=1.0
+  Using cached pandas-2.3.3-cp39-cp39-win_amd64.whl (11.4 MB)
+Collecting gradio-client==1.3.0
+  Downloading gradio_client-1.3.0-py3-none-any.whl (318 kB)
+     -------------------------------------- 318.7/318.7 KB 9.9 MB/s eta 0:00:00
+Collecting markupsafe~=2.0
+  Downloading MarkupSafe-2.1.5-cp39-cp39-win_amd64.whl (17 kB)
+Requirement already satisfied: importlib-resources<7.0,>=1.3 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from gradio) (6.5.2)
+Collecting semantic-version~=2.0
+  Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+Requirement already satisfied: pyyaml<7.0,>=5.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from gradio) (6.0.3)
+Collecting matplotlib~=3.0
+  Downloading matplotlib-3.9.4-cp39-cp39-win_amd64.whl (7.8 MB)
+     ---------------------------------------- 7.8/7.8 MB 7.3 MB/s eta 0:00:00
+Collecting urllib3~=2.0
+  Using cached urllib3-2.6.3-py3-none-any.whl (131 kB)
+Requirement already satisfied: huggingface-hub>=0.19.3 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from gradio) (1.8.0)
+Collecting ffmpy
+  Downloading ffmpy-1.0.0-py3-none-any.whl (5.6 kB)
+Collecting pydub
+  Using cached pydub-0.25.1-py2.py3-none-any.whl (32 kB)
+Requirement already satisfied: numpy<3.0,>=1.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from gradio) (2.0.2)
+Requirement already satisfied: typer<1.0,>=0.12 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from gradio) (0.23.2)
+Requirement already satisfied: orjson~=3.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from gradio) (3.11.5)
+Requirement already satisfied: typing-extensions~=4.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from gradio) (4.15.0)
+Requirement already satisfied: fsspec in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from gradio-client==1.3.0->gradio) (2025.10.0)
+Collecting websockets<13.0,>=10.0
+  Downloading websockets-12.0-cp39-cp39-win_amd64.whl (124 kB)
+     ---------------------------------------- 125.0/125.0 KB ? eta 0:00:00
+Requirement already satisfied: idna>=2.8 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from anyio<5.0,>=3.0->gradio) (3.11)
+Requirement already satisfied: exceptiongroup>=1.0.2 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from anyio<5.0,>=3.0->gradio) (1.3.1)
+Collecting starlette<1.0.0,>=0.40.0
+  Downloading starlette-0.49.3-py3-none-any.whl (74 kB)
+     ---------------------------------------- 74.3/74.3 KB ? eta 0:00:00
+Requirement already satisfied: annotated-doc>=0.0.2 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from fastapi<1.0->gradio) (0.0.5)
+Requirement already satisfied: typing-inspection>=0.4.2 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from fastapi<1.0->gradio) (0.4.2)
+Requirement already satisfied: certifi in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from httpx>=0.24.1->gradio) (2026.1.4)
+Requirement already satisfied: httpcore==1.* in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from httpx>=0.24.1->gradio) (1.0.9)
+Requirement already satisfied: h11>=0.16 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from httpcore==1.*->httpx>=0.24.1->gradio) (0.16.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.4.2 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from huggingface-hub>=0.19.3->gradio) (1.6.0)
+Requirement already satisfied: filelock>=3.10.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from huggingface-hub>=0.19.3->gradio) (3.19.1)
+Requirement already satisfied: tqdm>=4.42.1 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from huggingface-hub>=0.19.3->gradio) (4.67.3)
+Requirement already satisfied: zipp>=3.1.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from importlib-resources<7.0,>=1.3->gradio) (3.23.1)
+Requirement already satisfied: jsonpatch<2.0.0,>=1.33.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from langchain-core>=0.1->langgraph) (1.33)
+Requirement already satisfied: tenacity!=8.4.0,<10.0.0,>=8.1.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from langchain-core>=0.1->langgraph) (9.1.2)
+Requirement already satisfied: langsmith<1.0.0,>=0.3.45 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from langchain-core>=0.1->langgraph) (0.4.37)
+Requirement already satisfied: uuid-utils<1.0,>=0.12.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from langchain-core>=0.1->langgraph) (0.15.0)
+Collecting ormsgpack>=1.10.0
+  Downloading ormsgpack-1.11.0-cp39-cp39-win_amd64.whl (112 kB)
+     -------------------------------------- 112.0/112.0 KB 6.8 MB/s eta 0:00:00
+Collecting contourpy>=1.0.1
+  Downloading contourpy-1.3.0-cp39-cp39-win_amd64.whl (211 kB)
+     -------------------------------------- 211.8/211.8 KB 6.5 MB/s eta 0:00:00
+Requirement already satisfied: python-dateutil>=2.7 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from matplotlib~=3.0->gradio) (2.9.0.post0)
+Collecting fonttools>=4.22.0
+  Downloading fonttools-4.60.2-cp39-cp39-win_amd64.whl (1.5 MB)
+     ---------------------------------------- 1.5/1.5 MB 19.7 MB/s eta 0:00:00
+Collecting kiwisolver>=1.3.1
+  Downloading kiwisolver-1.4.7-cp39-cp39-win_amd64.whl (55 kB)
+     ---------------------------------------- 55.8/55.8 KB 2.9 MB/s eta 0:00:00
+Collecting cycler>=0.10
+  Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Collecting pyparsing>=2.3.1
+  Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+     ---------------------------------------- 122.8/122.8 KB ? eta 0:00:00
+Requirement already satisfied: tzdata>=2022.7 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from pandas<3.0,>=1.0->gradio) (2026.2)
+Requirement already satisfied: pytz>=2020.1 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from pandas<3.0,>=1.0->gradio) (2022.7.1)
+Requirement already satisfied: annotated-types>=0.6.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from pydantic>=2.7.4->langgraph) (0.7.0)
+Requirement already satisfied: pydantic-core==2.46.4 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from pydantic>=2.7.4->langgraph) (2.46.4)
+Requirement already satisfied: rich>=12.3.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from typer<1.0,>=0.12->gradio) (15.0.0)
+Requirement already satisfied: shellingham>=1.3.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from typer<1.0,>=0.12->gradio) (1.5.4)
+Requirement already satisfied: click>=8.0.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from typer<1.0,>=0.12->gradio) (8.1.8)
+Requirement already satisfied: colorama in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from click>=8.0.0->typer<1.0,>=0.12->gradio) (0.4.6)
+Requirement already satisfied: jsonpointer>=1.9 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from jsonpatch<2.0.0,>=1.33.0->langchain-core>=0.1->langgraph) (3.0.0)
+Requirement already satisfied: zstandard>=0.23.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from langsmith<1.0.0,>=0.3.45->langchain-core>=0.1->langgraph) (0.25.0)
+Requirement already satisfied: requests>=2.0.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from langsmith<1.0.0,>=0.3.45->langchain-core>=0.1->langgraph) (2.32.5)
+Requirement already satisfied: requests-toolbelt>=1.0.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from langsmith<1.0.0,>=0.3.45->langchain-core>=0.1->langgraph) (1.0.0)
+Requirement already satisfied: six>=1.5 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from python-dateutil>=2.7->matplotlib~=3.0->gradio) (1.17.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from rich>=12.3.0->typer<1.0,>=0.12->gradio) (2.20.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from rich>=12.3.0->typer<1.0,>=0.12->gradio) (3.0.0)
+Requirement already satisfied: mdurl~=0.1 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from markdown-it-py>=2.2.0->rich>=12.3.0->typer<1.0,>=0.12->gradio) (0.1.2)
+Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\≤È”ÓΩ‹\appdata\local\programs\python\python39\lib\site-packages (from requests>=2.0.0->langsmith<1.0.0,>=0.3.45->langchain-core>=0.1->langgraph) (2.0.12)
+Installing collected packages: pydub, xxhash, websockets, urllib3, tomlkit, semantic-version, ruff, python-multipart, pyparsing, pillow, ormsgpack, markupsafe, kiwisolver, fonttools, ffmpy, cycler, contourpy, aiofiles, pandas, matplotlib, starlette, langgraph-sdk, fastapi, gradio-client, langgraph-checkpoint, gradio, langgraph-prebuilt, langgraph
+  Attempting uninstall: websockets
+    Found existing installation: websockets 15.0.1
+    Uninstalling websockets-15.0.1:
+      Successfully uninstalled websockets-15.0.1
+  Attempting uninstall: urllib3
+    Found existing installation: urllib3 1.26.20
+    Uninstalling urllib3-1.26.20:
+      Successfully uninstalled urllib3-1.26.20
+  Attempting uninstall: pillow
+    Found existing installation: pillow 11.3.0
+    Uninstalling pillow-11.3.0:
+      Successfully uninstalled pillow-11.3.0
+  Attempting uninstall: markupsafe
+    Found existing installation: MarkupSafe 3.0.3
+    Uninstalling MarkupSafe-3.0.3:
+      Successfully uninstalled MarkupSafe-3.0.3
+Successfully installed aiofiles-23.2.1 contourpy-1.3.0 cycler-0.12.1 fastapi-0.128.8 ffmpy-1.0.0 fonttools-4.60.2 gradio-4.44.1 gradio-client-1.3.0 kiwisolver-1.4.7 langgraph-0.6.11 langgraph-checkpoint-2.1.2 langgraph-prebuilt-0.6.5 langgraph-sdk-0.2.9 markupsafe-2.1.5 matplotlib-3.9.4 ormsgpack-1.11.0 pandas-2.3.3 pillow-10.4.0 pydub-0.25.1 pyparsing-3.3.2 python-multipart-0.0.20 ruff-0.16.2 semantic-version-2.10.0 starlette-0.49.3 tomlkit-0.12.0 urllib3-2.6.3 websockets-12.0 xxhash-4.0.0
