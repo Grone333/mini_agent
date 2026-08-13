@@ -7,11 +7,16 @@
 import os
 import sys
 from pathlib import Path
+from dotenv import load_dotenv   # 读取 .env（W8 没有 main.py 兜底，必须在这里加载）
 
 # 把 W7_RAG 目录加进搜索路径，才能 import 它的 step 模块
 W7_DIR = str(Path(__file__).resolve().parent.parent / "W7_RAG")
 sys.path.insert(0, W7_DIR)
 CHROMA_DIR = os.path.join(W7_DIR, "chroma_db")   # 复用 W7 建好的向量库
+
+# 加载 .env：先 W7_RAG/.env（硅基流动 + DeepSeek 的 key），再兜底项目根目录
+load_dotenv(os.path.join(W7_DIR, ".env"))
+load_dotenv(os.path.join(W7_DIR, "..", ".env"))
 
 from langchain_community.vectorstores import Chroma      # 向量库
 from step02_embedding import SiliconFlowEmbeddings       # 文本 → 向量
